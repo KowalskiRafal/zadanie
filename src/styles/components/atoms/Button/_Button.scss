@@ -1,0 +1,42 @@
+.button {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    &--search {
+        width: 100%;
+        padding: 17px 50px;
+        background-color: $c-red;
+        color: $c-white;
+        transition: background-color $transition-base;
+
+        @include font-size(16);
+
+        &:hover {
+            background-color: $c-dark-red;
+        }
+
+        @include breakpoint(md-up) {
+            width: auto;
+        }
+    }
+
+    &--sort {
+        background-color: $c-white;
+        font-weight: 600;
+        color: $c-gray;
+        padding: 0;
+        text-align: center;
+        transition: color 0.3s ease-in-out;
+        @include font-size(11);
+
+        @include breakpoint(md-up) {
+         @include font-size(14);
+         text-align: left;
+        }
+    }
+
+    &--sort:hover {
+        color: $c-nigth-dive;
+    }
+}

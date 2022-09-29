@@ -1,0 +1,32 @@
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:map';
+
+@mixin font-size($target, $context: $font-size-base) {
+  font-size: math.div($target, $context) * 1rem;
+}
+
+@mixin breakpoint($point) {
+    $query-direction: '';
+    $query-point: '';
+    $query-size: '';
+  
+    @if str-index($point, '-up') {
+      $query-direction: 'min-width';
+      $query-point: string.slice($point, 0, string.length($point) - string.length('-up'));
+      $query-size: map.get($breakpoints, $query-point);
+    } @else {
+      @if str-index($point, '-down') {
+        $query-point: string.slice($point, 0, string.length($point) - string.length('-down'));
+      } @else {
+        $query-point: $point;
+      }
+  
+      $query-direction: 'max-width';
+      $query-size: map.get($breakpoints, $query-point) - 1px;
+    }
+  
+    @media screen and (#{$query-direction}: #{$query-size}) {
+      @content;
+    }
+  }

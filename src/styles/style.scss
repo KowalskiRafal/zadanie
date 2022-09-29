@@ -1,0 +1,20 @@
+/* BASE_STYLES */
+@import 'base/colors';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/fonts';
+@import 'base/globals';
+
+/* UTILS_STYLES */
+@import 'sass-utils/mixins';
+@import 'sass-utils/variables';
+
+/* ATOMS_STYLE */
+@import 'components/atoms/Button/Button';
+@import 'components/atoms/SearchBar/SearchBar';
+
+/* MOLECULES_STYLE */
+@import 'components/molecules/DebtsList/DebtsList';
+
+/* ORGANISMS_STYLE */
+@import 'components/organisms/Header/Header';

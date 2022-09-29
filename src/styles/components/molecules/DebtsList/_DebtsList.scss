@@ -1,0 +1,51 @@
+.debts-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    position: relative;
+
+    @include breakpoint(md-up) {
+        width: 90%;
+    }
+
+    &__buttons,
+    &__debts {
+        width: 100%;
+        display: flex;
+        padding: 20px 0;
+        border-bottom: 1px solid $c-gray;
+    }
+
+    &__body {
+        position: sticky;
+        top: 0;
+        background-color: $c-white;
+
+        @include breakpoint(md-up) {
+            position: unset;
+            top: unset;
+        }
+    }
+
+    td {
+        width: 175px;
+        padding: 0 5px;
+        color: $c-nigth-dive;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-around;
+        word-break: break-word;
+        border-right: 1px solid $c-gray;
+        @include font-size(12);
+
+        @include breakpoint(md-up) {
+        width: 100%;
+        padding: 0 5px;
+        justify-content: unset;
+        border-right: none;
+        @include font-size(16);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    height: 164px;
+    background-color: $c-nigth-dive;
+    color: $c-white;
+
+    @include font-size(14);
+
+    &__wrapper {
+        padding: 15px 0;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(md-up) {
+            display: block;
+            padding: 40px 0;
+        }
+    }
+
+    &__heading {
+        padding-bottom: 10px;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        height: 51px;
+        padding: 0 10px;
+        @include font-size(25);
+
+        @include breakpoint(md-up) {
+            width: 400px;
+        }
+    }
+}
